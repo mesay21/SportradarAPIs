@@ -29,7 +29,7 @@ class API(object):
 
         assert api_key != '', 'Must supply a non-empty API key.'
         self.api_key = {'api_key': api_key}
-        self.api_root = 'http://api.sportradar.us/'
+        self.api_root = 'https://api.sportradar.com/'
         self.FORMAT = "." + format_.strip(".")
         self.timeout = timeout
         self._sleep_time = sleep_time

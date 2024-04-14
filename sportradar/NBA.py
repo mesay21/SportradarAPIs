@@ -12,7 +12,7 @@ class NBA(API):
         super().__init__(api_key, format_, timeout, sleep_time)
         self.access_level = access_level
         self.language = language
-        self.version = 7
+        self.version = 8
         self.prefix = 'nba/{level}/v{ver}/{lang}/'.format(
                         level=self.access_level, ver=self.version, lang=self.language)
 
@@ -122,4 +122,9 @@ class NBA(API):
         """
         path = "teams/{team_id}/profile".format(team_id=team_id)
         return self._make_request(self.prefix + path)
-
+    
+    def get_teams(self):
+        """NBA Teams Provides a complete list of teams in the NBA API database.
+        """
+        path = "league/teams"
+        return self._make_request(self.prefix + path)
