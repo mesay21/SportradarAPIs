@@ -133,7 +133,7 @@ class NBA(API):
         """Provides scheduling info for all events with odds available on a given sport and date
         """
         path = "oddscomparison-prematch/production/v2/{locale}/sports/{urn_sport}/schedules/{urn_date}/schedules".format(
-            locale=self.language, urn_sport=urn_sport, urn_dat = urn_date)
+            locale=self.language, urn_sport=urn_sport, urn_date = urn_date)
         
         return self._make_request(path)
     
