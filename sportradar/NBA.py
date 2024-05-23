@@ -129,7 +129,7 @@ class NBA(API):
         path = "league/teams"
         return self._make_request(self.prefix + path)
     
-    def get_oc_daily_schedules (self, urn_sport,urn_date):
+    def get_oc_prematch_daily_schedules (self, urn_date, urn_sport="sr:sport:1"):
         """Provides scheduling info for all events with odds available on a given sport and date
         """
         path = "oddscomparison-prematch/production/v2/{locale}/sports/{urn_sport}/schedules/{urn_date}/schedules".format(
@@ -137,7 +137,7 @@ class NBA(API):
         
         return self._make_request(path)
     
-    def get_oc_sport_event_markets(self, sport_event_id):
+    def get_oc_prematch_sport_event_markets(self, sport_event_id):
         """Returns a list of markets for a given sport event.
         """
         path = "oddscomparison-prematch/production/v2/{locale}/sport_events/{sport_event_id}/sport_event_markets".format(
