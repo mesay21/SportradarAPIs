@@ -7,14 +7,14 @@ from sportradar.api import API
 
 class NHL(API):
 
-    def __init__(self, 
-    api_key, 
-    access_level='trial',
-    language='en',
-    version=7
-    format_='json', 
-    timeout=5, 
-    sleep_time=1.5):
+    def __init__(self,
+                 api_key,
+                 access_level='trial',
+                 language='en',
+                 version=7,
+                 format_='json',
+                 timeout=5,
+                 sleep_time=1.5):
         super().__init__(api_key, format_, timeout, sleep_time)
         self.access_level = access_level
         self.language = language
