@@ -176,7 +176,7 @@ class NHL(API):
         print(path)
         return self._make_request(path)
 
-    def get_team_leaders___daily(self, year1, nhl_season, year2, month, day, team_id):
+    def get_team_leaders_daily(self, year1, nhl_season, year2, month, day, team_id):
         """Provides the leaders for a given day. Please note that this feed will not
             return data until the regular season begins
         """
@@ -185,7 +185,7 @@ class NHL(API):
         print(path)
         return self._make_request(path)
 
-    def get_team_leaders___seasonal(self, season, nhl_season, team_id):
+    def get_team_leaders_seasonal(self, season, nhl_season, team_id):
         """Get leaders on a team level. Please note that this feed will not return data
             until the regular season begins
         """
@@ -194,7 +194,7 @@ class NHL(API):
         print(path)
         return self._make_request(path)
 
-    def get_team_profile___roster(self, team_id):
+    def get_team_profile_roster(self, team_id):
         """Get the roster information for a NHL team"""
         path = f"{self.prefix}/teams/{team_id}/profile".format(team_id=team_id)
         print(path)
