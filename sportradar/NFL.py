@@ -7,13 +7,19 @@ from sportradar.api import API
 
 class NFL(API):
 
-    def __init__(self, api_key, format_='json', access_level='ot',
-                 version=2, timeout=5, sleep_time=1.5):
+    def __init__(self,
+                 api_key,
+                 access_level='trial',
+                 language='en',
+                 version=7,
+                 format_='json',
+                 timeout=5,
+                 sleep_time=1.5):
         super().__init__(api_key, format_, timeout, sleep_time)
         self.access_level = access_level
+        self.language = language
         self.version = version
-        self.prefix = 'nfl-{level}{version}/'.format(level=self.access_level,
-                                                       version=self.version)
+        self.prefix = f"nfl/official/{self.access_level}/v{self.version}/{self.language}"
 
     def get_daily_change_log(self, year, month, day):
         """Obtain changes made to previously closed events, team rosters, or player
@@ -112,4 +118,11 @@ class NFL(API):
         path = "seasontd/{year:4d}/{nfl_season}/{nfl_season_week}/depth_charts".format(
             year=year, nfl_season=nfl_season, nfl_season_week=nfl_season_week)
         return self._make_request(self.prefix + path)
+
+    def get_teams(self):
+        """
+        MLB Teams provides a complete list of active teams in the MLB API database.
+        """
+        path = f"{self.prefix}/league/teams"
+        return self._make_request(path)
 
