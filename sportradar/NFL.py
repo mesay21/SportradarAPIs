@@ -43,7 +43,7 @@ class NFL(API):
         path = "games/{game_id}/roster".format(game_id=game_id)
         return self._make_request(self.prefix + path)
 
-    def get_game_statistics(self, game_id):
+    def get_game_summary(self, game_id):
         """Obtain team and player level game statistics for each team."""
         path = "games/{game_id}/statistics".format(game_id=game_id)
         return self._make_request(self.prefix + path)
