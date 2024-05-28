@@ -19,7 +19,7 @@ class NFL(API):
         self.access_level = access_level
         self.language = language
         self.version = version
-        self.prefix = f"nfl/official/{self.access_level}/v{self.version}/{self.language}"
+        self.prefix = f"nfl/official/{self.access_level}/v{self.version}/{self.language}/"
 
     def get_daily_change_log(self, year, month, day):
         """Obtain changes made to previously closed events, team rosters, or player
